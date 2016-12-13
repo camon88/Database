@@ -1,0 +1,9 @@
+CREATE TABLE project ( 
+  pname varchar(20) NOT NULL, 
+  pnumber int(2), 
+  plocation varchar(20), 
+  dnum varchar(2), 
+  CONSTRAINT project_pnumber_pk PRIMARY KEY (pnumber), 
+  CONSTRAINT project_pname_uk UNIQUE (pname), 
+  CONSTRAINT project_dnum_fk FOREIGN KEY (dnum) REFERENCES department(dnumber) 
+);

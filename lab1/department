@@ -1,0 +1,9 @@
+CREATE TABLE department ( 
+  dname varchar(20), 
+  dnumber varchar(2) NOT NULL, 
+  mgrssn varchar(9), 
+  mgrstartdate date, 
+  CONSTRAINT department_dnumber_pk PRIMARY KEY (dnumber), 
+  CONSTRAINT department_dname_uk UNIQUE (dname), 
+  CONSTRAINT department_mgrssn_fk FOREIGN KEY (mgrssn) REFERENCES employee(ssn) 
+);

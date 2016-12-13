@@ -1,0 +1,6 @@
+CREATE TABLE dept_locations ( 
+  dnumber varchar(2) NOT NULL, 
+  dlocation varchar(20) NOT NULL, 
+  CONSTRAINT dept_loc_dnum_dloc_pk PRIMARY KEY (dnumber, dlocation), 
+  CONSTRAINT dept_locations_dnumber_fk FOREIGN KEY (dnumber) REFERENCES department(dnumber)
+  );

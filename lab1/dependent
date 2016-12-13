@@ -1,0 +1,10 @@
+CREATE TABLE dependent ( 
+   essn varchar(9) NOT NULL, 
+   dependent_name varchar(20) NOT NULL, 
+   sex char, 
+   bdate date, 
+   relationship varchar(10), 
+   CONSTRAINT dependent_essn_dname_pk PRIMARY KEY (essn, dependent_name), 
+   CONSTRAINT dependent_essn_fk FOREIGN KEY (essn) REFERENCES employee(ssn) 
+); 
+ 

@@ -1,0 +1,8 @@
+CREATE TABLE works_on ( 
+   essn varchar(9) NOT NULL, 
+   pno int(2) NOT NULL, 
+   hours double(5,2), 
+   CONSTRAINT works_on_essn_pno_pk PRIMARY KEY (essn, pno), 
+   CONSTRAINT works_on_essn_fk FOREIGN KEY (essn) REFERENCES employee(ssn), 
+   CONSTRAINT works_on_pno_fk FOREIGN KEY (pno) REFERENCES project(pnumber) 
+);
